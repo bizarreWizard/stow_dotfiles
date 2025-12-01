@@ -1,0 +1,23 @@
+# FONT FAMILY
+font_family      family="FiraCode Nerd Font Mono"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+
+font_size 16.0
+
+# BELL DISABLE
+enable_audio_bell no
+
+# BEGIN_KITTY_THEME
+# citylights
+include current-theme.conf
+# END_KITTY_THEME
+
+# SHELL
+shell_integration no-cursor
+
+# CURSOR 
+cursor_shape block
+
+disable_ligatures always
