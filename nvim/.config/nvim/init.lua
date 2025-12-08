@@ -53,7 +53,23 @@ require("lazy").setup({
         branch = 'master', 
         lazy = false, 
         build = ":TSUpdate"
-        }
+        },
+
+        {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+            "nvim-tree/nvim-web-devicons", -- optional, but recommended
+        },
+        lazy = false, -- neo-tree will lazily load itself
+        },
+
+        {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+        },
     },
   
     -- Configure any other settings here. See the documentation for more details.
@@ -75,4 +91,11 @@ require'nvim-treesitter.configs'.setup { -- nvim-treesitter configuration
     ensure_installed = { "c", "cpp", "python", "javascript", "lua", "vim", "vimdoc", "markdown" },
     highlight = {enable = true},
     indent = {enable = true},
+}
+
+-- neo-tree keymaps and configuration
+vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', {})
+
+require('lualine').setup {
+    options = {theme = 'nightfly'}
 }
