@@ -9,6 +9,6 @@ return {
     lazy = false, -- neo-tree will lazily load itself
     opts = {filesystem = {filtered_items = {visible = true}}},
     keys = {
-        vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>', {})
+        vim.keymap.set('n', '<C-n>', ':Neotree reveal<CR>', {})
     }
 }
