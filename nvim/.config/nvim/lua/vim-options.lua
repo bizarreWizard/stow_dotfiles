@@ -9,5 +9,3 @@ vim.cmd("set smarttab")
 vim.cmd("set softtabstop=4")
 vim.cmd("set expandtab")
 vim.cmd("set mouse=a")
-
-
