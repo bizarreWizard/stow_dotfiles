@@ -13,9 +13,10 @@ return {
 					"lua_ls",
 					"clangd",
 					"ts_ls",
-					"pyright",
+					"ruff",
 					"texlab",
 					"bashls",
+                    "eslint",
 				},
 			})
 		end,
