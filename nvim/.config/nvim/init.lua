@@ -23,4 +23,5 @@ require("lazy").setup({
 	install = { colorscheme = { "habamax" } },
 	-- automatically check for plugin updates
 	checker = { enabled = true },
+	ui = { title = "lazy.nvim", backdrop = 100, border = "double" },
 })

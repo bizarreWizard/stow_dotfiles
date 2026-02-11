@@ -9,3 +9,13 @@ vim.cmd("set smarttab")
 vim.cmd("set softtabstop=4")
 vim.cmd("set expandtab")
 vim.cmd("set mouse=a")
+
+vim.keymap.set("n", "<leader>w", ":write<CR>")
+vim.keymap.set("n", "<leader>W", ":wqa<CR>")
+vim.keymap.set("n", "<leader>q", ":q<CR>")
+vim.keymap.set("n", "<leader>Q", ":qa<CR>")
+vim.keymap.set("n", "<leader>l", ":Lazy<CR>")
+vim.keymap.set("n", "<leader>m", ":Mason<CR>")
+vim.keymap.set("n", "<leader>so", ":so<CR>")
+
+vim.opt.winborder = "double"
