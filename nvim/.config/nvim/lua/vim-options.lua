@@ -10,6 +10,8 @@ vim.cmd("set softtabstop=4")
 vim.cmd("set expandtab")
 vim.cmd("set mouse=a")
 vim.cmd("set nocompatible")
+vim.cmd("set wrap")
+vim.cmd("set linebreak")
 
 vim.keymap.set("n", "<leader>w", ":write<CR>")
 vim.keymap.set("n", "<leader>W", ":wqa<CR>")
