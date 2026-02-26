@@ -8,8 +8,8 @@ return {
 		vim.g.vimtex_view_on_success = 1
 		vim.g.vimtex_compile_enabled = 1
 		vim.g.vimtex_compiler_latexmk = {
-			aux_dir = "~/code/LaTeX/.aux_folder/",
-			out_dir = "~/code/LaTeX/out_folder/",
+			aux_dir = "./.aux_folder/",
+			out_dir = "./out_folder/",
 		}
 	end,
 }
