@@ -11,5 +11,9 @@ return {
 			aux_dir = "./.aux_folder/",
 			out_dir = "./out_folder/",
 		}
+        vim.g.vimtex_quickfix_ignore_filters = {
+            [[Underfull \\hbox]],
+            [[Overfull \\hbox]],
+        }
 	end,
 }
