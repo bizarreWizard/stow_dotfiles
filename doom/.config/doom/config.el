@@ -8,7 +8,7 @@
     (setq org-highlight-latex-and-related '(latex script entities))
     (setq org-src-fontify-natively t)
     (setq org-format-latex-options
-        (plist-put org-format-latex-options :scale 1.3)))
+        (plist-put org-format-latex-options :scale 1.8)))
 
 (add-hook 'org-mode-hook 'org-fragtog-mode)
 
