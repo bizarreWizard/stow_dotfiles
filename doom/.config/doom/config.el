@@ -4,11 +4,13 @@
 
 (setq initial-frame-alist '((width . 135) (height . 45)))
 
+(setq org-preview-latex-default-process 'dvisvgm)
+
 (after! org
     (setq org-highlight-latex-and-related '(latex script entities))
     (setq org-src-fontify-natively t)
     (setq org-format-latex-options
-        (plist-put org-format-latex-options :scale 1.8)))
+        (plist-put org-format-latex-options :scale 1.4)))
 
 (add-hook 'org-mode-hook 'org-fragtog-mode)
 

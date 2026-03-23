@@ -9,8 +9,8 @@ return {
 			sources = {
 				-- linting and diagnostics
 				null_ls.builtins.diagnostics.mypy,
-				-- null_ls.builtins.diagnostics.pylint,
 				null_ls.builtins.diagnostics.cppcheck,
+				-- null_ls.builtins.diagnostics.pylint,
 				-- null_ls.builtins.diagnostics.selene, -- will throw warnings for mixed tables
 
 				-- formatting
