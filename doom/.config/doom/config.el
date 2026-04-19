@@ -6,6 +6,9 @@
 
 (setq org-preview-latex-default-process 'dvisvgm)
 
+(add-hook 'eglot-managed-mode-hook
+    (lambda () (eglot-inlay-hints-mode -1)))
+
 (after! org
     (setq org-highlight-latex-and-related '(latex script entities))
     (setq org-src-fontify-natively t)
