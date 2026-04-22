@@ -32,10 +32,10 @@ vim.keymap.set("n", "<leader>td", ":colorscheme koda-dark<CR>")
 vim.opt.winborder = "double"
 
 -- LATEX BINDS
-vim.keymap.set("n", "<C-l>l", "i\\begin{itemize}<CR>\\end{itemize}<ESC>O<TAB>\\item ") -- insert list (itemize)
-vim.keymap.set("n", "<C-l>i", "i\\(\\)<ESC>hi  <ESC>i") -- enter inline math mode (from normal mode)
-vim.keymap.set("i", "<C-l>i", "\\(\\)<ESC>hi  <ESC>i") -- enter inline math mode (from insert mode)
-vim.keymap.set("n", "<C-l>c", "i\\[\\]<ESC>hi  <ESC>i") -- enter centered math mode (from normal mode)
-vim.keymap.set("i", "<C-l>c", "\\[\\]<ESC>hi  <ESC>i") -- enter centered math mode (from insert mode)
-vim.keymap.set("i", "<C-i>", "\\textit{}<ESC>i") -- enter italic text
-vim.keymap.set("i", "<C-b>", "\\textbf{}<ESC>i") -- enter bold text
+--vim.keymap.set("n", "<C-l>l", "i\\begin{itemize}<CR>\\end{itemize}<ESC>O<TAB>\\item ") -- insert list (itemize)
+--vim.keymap.set("n", "<C-l>i", "i\\(\\)<ESC>hi  <ESC>i") -- enter inline math mode (from normal mode)
+--vim.keymap.set("i", "<C-l>i", "\\(\\)<ESC>hi  <ESC>i") -- enter inline math mode (from insert mode)
+--vim.keymap.set("n", "<C-l>c", "i\\[\\]<ESC>hi  <ESC>i") -- enter centered math mode (from normal mode)
+--vim.keymap.set("i", "<C-l>c", "\\[\\]<ESC>hi  <ESC>i") -- enter centered math mode (from insert mode)
+--vim.keymap.set("i", "<C-i>", "\\textit{}<ESC>i") -- enter italic text
+--vim.keymap.set("i", "<C-b>", "\\textbf{}<ESC>i") -- enter bold text
