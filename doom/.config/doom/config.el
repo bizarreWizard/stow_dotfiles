@@ -1,6 +1,6 @@
 ;; (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
-(setq doom-font (font-spec :family "SauceCodePro NFM" :size 14.0))
+(setq doom-font (font-spec :family "FreeMono" :size 17.0))
 
 (setq initial-frame-alist '((width . 135) (height . 45)))
 
@@ -13,7 +13,10 @@
     (setq org-highlight-latex-and-related '(latex script entities))
     (setq org-src-fontify-natively t)
     (setq org-format-latex-options
-        (plist-put org-format-latex-options :scale 1.4)))
+          (plist-put org-format-latex-options :scale 1.4))
+    (setq org-format-latex-options
+          (plist-put org-format-latex-options :background "Transparent"))
+)
 
 (add-hook 'org-mode-hook 'org-fragtog-mode)
 
@@ -51,7 +54,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'modus-vivendi)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -59,7 +62,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/org_notes/")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -92,5 +95,3 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-
-(setq org-highlight-latex-and-related '(latex script entities))
