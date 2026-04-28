@@ -1,0 +1,13 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "FreeMono";
+    font-size: 15px;
+    /* apparently necessary */
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+
+monitor=,1920x1200@60,auto,auto
