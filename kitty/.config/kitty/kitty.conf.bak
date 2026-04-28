@@ -5,7 +5,7 @@
 # bold_italic_font auto
 
 # FONT SIZE
-font_size 17.0
+include font_size.conf
 
 # BELL DISABLE
 enable_audio_bell no
@@ -26,8 +26,8 @@ disable_ligatures always
 
 
 # BEGIN_KITTY_FONTS
-font_family      family="SauceCodePro Nerd Font Mono"
-bold_font        auto
-italic_font      auto
-bold_italic_font auto
+font_family      family='Iosevka Term' style='Light Extended'
+bold_font        family='Iosevka Term' style='Medium Extended'
+italic_font      family='Iosevka Term' style='Light Extended Italic'
+bold_italic_font family='Iosevka Term' style='Medium Extended Italic'
 # END_KITTY_FONTS

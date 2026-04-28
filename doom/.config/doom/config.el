@@ -1,6 +1,6 @@
 ;; (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
-(setq doom-font (font-spec :family "FreeMono" :size 17.0))
+(setq doom-font (font-spec :family "Iosevka Fixed Light Extended" :size 16.0))
 
 (setq initial-frame-alist '((width . 135) (height . 45)))
 
