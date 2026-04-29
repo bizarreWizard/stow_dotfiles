@@ -4,17 +4,38 @@
   "spacing": 10,
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-center": ["clock"],
-  "modules-right": ["pulseaudio", "network", "battery"],
+  "modules-right": ["cpu", "memory", "pulseaudio", "network", "battery"],
   "hyprland/window": {},
   "battery": {
     "format": "{capacity}% {icon}",
     "format-icons": ["", "", "", "", ""],
   },
   "clock": {
-    "format-alt": "{:%a, %d. %b  %H:%M}",
+    "format": "{:%H:%M} ",
+    "format-alt": "{:%A, %B %d, %Y (%R)}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffffff'><b>{}</b></span>",
+        "days": "<span color='#ffffff'>{}</span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ff00ff'>{}</span>",
+        "today": "<span color='#00ff00'><b>{}</b></span>",
+      },
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "tz_up",
+      "on-scroll-down": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down",
+    },
   },
   "pulseaudio": {
-    "format": "Volume: {volume}%",
+    "format": "[Volume: {volume}%]",
     "format-bluetooth": "{volume}% {icon}",
     //"format-muted": "",
     "format-icons": {
@@ -35,33 +56,24 @@
   },
   "network": {
     "interface": "eno1",
+    "inverval": 60,
     "format": "{ifname}",
     "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "Network: {ipaddr}/{cidr} ",
-    "format-disconnected": "", //An empty format will hide the module.
+    "format-ethernet": "[Network: ↓ {bandwidthDownBytes}, ↑ {bandwidthUpBytes}] ",
+    "format-disconnected": "ERROR: no connection", //An empty format will hide the module.
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-ethernet": "Interface: {ifname}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
   },
-  /*
   "hyprland/workspaces": {
-    "format": "{name}",
+    "format": "{icon}",
+    "format-window-separator": "",
     "persistent-workspaces": {
       "*": 5,
     },
-    "workspace-taskbar": {
-        "enable": true,
-        "update-active-window": true,
-        "format": "{icon} {title:.20}",
-        "icon-size": 18,
-    },
-  },
-  */
-  "hyprland/workspaces": {
-    "format": "{icon} [{windows}]",
-    "format-window-separator": "",
+    /*
     "workspace-taskbar": {
       "enable": true,
       "update-active-window": true,
@@ -69,8 +81,21 @@
       "icon-size": 18,
       "icon-theme": "Papirus-Dark",
     },
+    */
   },
   "hyprland/window": {
-    "format": " >> {}",
+    "format": " [ {} ]",
+    "rewrite": {
+      " \\[  \\]": " [ void ]",
+    },
+  },
+  "cpu": {
+    "interval": 10,
+    "format": "[CPU: {usage}% (avg. {avg_frequency} GHz)]",
+  },
+  "memory": {
+    "interval": 30,
+    "format": "[Mem: {percentage}% (Swap: {swapPercentage}%)]",
+    "max-length": 30,
   },
 }
