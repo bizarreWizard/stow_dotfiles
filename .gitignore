@@ -1,4 +1,9 @@
 kitty/.config/kitty/font_size.conf
+
 nvim/.config/nvim/lazy-lock.json
+
 hypr/.config/hypr/specific.conf
+hypr/.config/hypr/hyprpaper.conf
+
 waybar/.config/waybar/specific.css
+waybar/.config/waybar/specific.jsonc
