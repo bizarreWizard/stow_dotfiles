@@ -15,9 +15,9 @@ export NVM_DIR="$HOME/.nvm"
 
 # custom alias list
 alias upsys="sudo pacman -Syu"
-alias doomup=".config/emacs/bin/./doom upgrade"
-alias doomsync=".config/emacs/bin/./doom sync"
-alias doomdoc=".config/emacs/bin/./doom doctor"
+alias dup=".config/emacs/bin/./doom upgrade"
+alias dsync=".config/emacs/bin/./doom sync"
+alias ddoc=".config/emacs/bin/./doom doctor"
 alias slp="systemctl suspend"
 alias ll="ls -l"
 alias la="ls -la"
