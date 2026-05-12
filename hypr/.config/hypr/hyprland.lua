@@ -27,7 +27,7 @@ hl.config({
   },
 })
 
--- hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
+hl.permission({binary = "/usr/bin/grim", type = "screencopy", mode = "allow"})
 -- hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
 -- hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
 
@@ -92,9 +92,9 @@ hl.config({
 local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + backslash", hl.dsp.exec_cmd("grim"))
-hl.bind(mainMod .. " + SHIFT + backslash", hl.dsp.exec_cmd("grim -g \"$slurp -d\""))
+hl.bind(mainMod .. " + SHIFT + backslash", hl.dsp.exec_cmd("grim -g \"$(slurp -d)\""))
 hl.bind(mainMod .. " + CTRL + backslash", hl.dsp.exec_cmd("grim - | wl-copy"))
-hl.bind(mainMod .. " + CTRL + SHIFT + backslash", hl.dsp.exec_cmd("grim -g \"$slurp -d\" - | wl-copy"))
+hl.bind(mainMod .. " + CTRL + SHIFT + backslash", hl.dsp.exec_cmd("grim -g \"$(slurp -d)\" - | wl-copy"))
 
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.exec_cmd("firefox"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("steam"))
