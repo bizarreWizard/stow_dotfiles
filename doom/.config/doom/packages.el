@@ -1,5 +1,6 @@
 (package! gruber-darker-theme)
 (package! org-fragtog)
+(package! eldoc-box)
 
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el

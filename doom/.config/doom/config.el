@@ -20,6 +20,23 @@
 
 (add-hook 'org-mode-hook 'org-fragtog-mode)
 
+(setq eldoc-idle-delay 0.0)
+
+(after! eldoc-box
+  ;; Disable automatic popup-on-hover
+  (remove-hook 'eldoc-box-hover-at-point-functions
+               #'eldoc-box--hover-at-point)
+
+  ;; Make popup appear near point instead of weird screen corner
+  (setq eldoc-box-position-function #'eldoc-box--default-at-point-position-function)
+
+  ;; Optional cosmetics
+  (setq eldoc-box-clear-with-C-g t))
+
+(map! :n "K" #'eldoc-box-help-at-point)
+
+(setq show-paren-delay 0)
+
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
