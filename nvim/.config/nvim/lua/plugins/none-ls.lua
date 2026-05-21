@@ -19,7 +19,7 @@ return {
 					filetypes = { "c", "cpp" }, -- specifies to attach only to c and cpp files
 					extra_args = { "--style={IndentWidth: 4}" }, -- specifies indent width to 4 spaces
 				}),
-				null_ls.builtins.formatting.black,
+				-- null_ls.builtins.formatting.black,
 				null_ls.builtins.formatting.isort,
 			},
 		})

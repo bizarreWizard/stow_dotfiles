@@ -126,6 +126,13 @@ end
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 
+hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
+
+hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.swap({direction = "left"}))
+hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.swap({direction = "right"}))
+hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.swap({direction = "up"}))
+hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.swap({direction = "down"}))
+
 -- Laptop Multimedia Keys
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),      { locked = true, repeating = true })
