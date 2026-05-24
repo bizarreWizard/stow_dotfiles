@@ -26,8 +26,8 @@ disable_ligatures always
 
 
 # BEGIN_KITTY_FONTS
-font_family      family='Iosevka Term' style='Light Extended'
-bold_font        family='Iosevka Term' style='Medium Extended'
-italic_font      family='Iosevka Term' style='Light Extended Italic'
-bold_italic_font family='Iosevka Term' style='Medium Extended Italic'
+font_family      family='Iosevka Fixed' style='Extralight Extended'
+bold_font        family='Iosevka Fixed' style=Extended
+italic_font      family='Iosevka Fixed' style='Extralight Extended Italic'
+bold_italic_font family='Iosevka Fixed' style='Extended Italic'
 # END_KITTY_FONTS
