@@ -4,7 +4,7 @@ return {
 		lazy = false,
 		priority = 999,
 		config = function()
-			vim.cmd("colorscheme koda")
+			-- vim.cmd("colorscheme koda")
 		end,
 	},
 	{
@@ -53,6 +53,8 @@ return {
 					Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
 				},
 			})
+
+			vim.cmd("colorscheme vscode")
 		end,
 	},
 	{
