@@ -1,13 +1,13 @@
 @import url("specific.css");
 
 window#waybar {
-    background: transparent;
+    background: beige;
     border-bottom: 0px transparent;
-    color: white;
+    color: black;
 }
 
 #window {
-    color: white;
+    color: black;
 }
 
 tooltip {
@@ -21,12 +21,12 @@ tooltip label {
 #workspaces button {
     padding: 0 5px;
     background: transparent;
-    color: white;
+    color: black;
 }
 
 #workspaces button.active {
-    color: lime;
-    background: transparent;
+    color: aqua;
+    background: black;
 }
 
 #mode, #clock, #battery {
@@ -39,7 +39,7 @@ tooltip label {
 }
 
 #clock {
-    color: white;
+    color: black;
     background: transparent;
 }
 
