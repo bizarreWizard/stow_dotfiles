@@ -2,6 +2,7 @@
 
 (setq doom-font (font-spec :family "Iosevka Fixed Light Extended" :size 16.0))
 
+; this should be useless in hyprland
 (setq initial-frame-alist '((width . 135) (height . 45)))
 
 (setq org-preview-latex-default-process 'dvisvgm)
@@ -37,6 +38,28 @@
 
 (setq show-paren-delay 0)
 
+(setq display-time-load-average nil)
+(setq display-time-default-load-average nil)
+(setq display-time-format "%d-%m-%y %H:%M")
+(display-time-mode)
+
+(setq eglot-menu-string "LSP")
+
+; modeline icons
+(after! doom-modeline
+  (setq doom-modeline-icon t)
+  (setq doom-modeline-time-icon nil)
+  (setq doom-modeline-lsp-icon nil)
+  ; (custom-set-faces! '(doom-modeline-lsp-success :weight bold))
+  (setq doom-modeline-major-mode-icon t))
+
+(after! nerd-icons
+  (setq nerd-icons-font-family "Symbols Nerd Font Mono"))
+
+; vterm config
+(after! vterm
+  (setq vterm-timer-delay 0.01))
+
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
@@ -71,7 +94,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'modus-vivendi)
+(setq doom-theme 'doom-one)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.

@@ -1,6 +1,5 @@
 (package! org-fragtog)
 (package! eldoc-box)
-(package! standard-themes)
 
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
