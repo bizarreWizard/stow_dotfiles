@@ -1,7 +1,7 @@
 @import url("specific.css");
 
 window#waybar {
-    background: beige;
+    background: transparent;
     border-bottom: 0px transparent;
     color: black;
 }
