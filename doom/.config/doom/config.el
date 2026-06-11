@@ -60,8 +60,8 @@
 (after! vterm
   (setq vterm-timer-delay 0.01))
 
-; diary config
-(setq diary-file "~/diary")
+; agenda config
+(setq org-agenda-files '("~/org_notes/agenda/"))
 
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
