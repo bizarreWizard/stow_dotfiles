@@ -57,7 +57,7 @@
   },
   "network": {
     //"interface": "eno1",
-    "inverval": 60,
+    "inverval": 10,
     "format": "{ifname}",
     //"format-wifi": "[Network: ↓ {bandwidthDownBytes}, ↑ {bandwidthUpBytes}] ",
     "format-ethernet": "[Network: ↓ {bandwidthDownBytes}, ↑ {bandwidthUpBytes}] ",
@@ -91,11 +91,11 @@
     },
   },
   "cpu": {
-    "interval": 10,
+    "interval": 2,
     //"format": "[CPU: {usage}% (avg. {avg_frequency} GHz)]",
   },
   "memory": {
-    "interval": 30,
+    "interval": 2,
     //"format": "[Mem: {percentage}% (Swap: {swapPercentage}%)]",
     "max-length": 30,
   },
