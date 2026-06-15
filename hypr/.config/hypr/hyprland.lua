@@ -99,6 +99,7 @@ hl.bind(mainMod .. " + CTRL + SHIFT + backslash", hl.dsp.exec_cmd("grim -g \"$(s
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.exec_cmd("firefox"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("steam"))
 hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("emacs"))
+hl.bind(mainMod .. " + SHIFT + CTRL + E", hl.dsp.exec_cmd("emacs --init-directory .config/minimal-emacs"))
 hl.bind(mainMod .. " + SHIFT + Z", hl.dsp.exec_cmd("zathura"))
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 
