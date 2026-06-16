@@ -557,3 +557,332 @@
   :commands (eglot-ensure
              eglot-rename
              eglot-format-buffer))
+
+;; This automates the process of updating installed packages
+(use-package auto-package-update
+  :custom
+  ;; Set the number of days between automatic updates.
+  ;; Here, packages will only be updated if at least 7 days have passed
+  ;; since the last successful update.
+  (auto-package-update-interval 7)
+
+  ;; Suppress display of the *auto-package-update results* buffer after updates.
+  ;; This keeps the user interface clean and avoids unnecessary interruptions.
+  (auto-package-update-hide-results t)
+
+  ;; Automatically delete old package versions after updates to reduce disk
+  ;; usage and keep the package directory clean. This prevents the accumulation
+  ;; of outdated files in Emacs's package directory, which consume
+  ;; unnecessary disk space over time.
+  (auto-package-update-delete-old-versions t)
+
+  ;; Uncomment the following line to enable a confirmation prompt
+  ;; before applying updates. This can be useful if you want manual control.
+  (auto-package-update-prompt-before-update t)
+
+  :config
+  ;; Run package updates automatically at startup, but only if the configured
+  ;; interval has elapsed.
+  (auto-package-update-maybe)
+
+  ;; Schedule a background update attempt daily at 10:00 AM.
+  ;; This uses Emacs' internal timer system. If Emacs is running at that time,
+  ;; the update will be triggered. Otherwise, the update is skipped for that
+  ;; day. Note that this scheduled update is independent of
+  ;; `auto-package-update-maybe` and can be used as a complementary or
+  ;; alternative mechanism.
+  (auto-package-update-at-time "10:00"))
+
+(use-package buffer-terminator
+  :custom
+  ;; Enable/Disable verbose mode to log buffer cleanup events
+  (buffer-terminator-verbose nil)
+
+  ;; Set the inactivity timeout (in seconds) after which buffers are considered
+  ;; inactive (default is 30 minutes):
+  (buffer-terminator-inactivity-timeout (* 30 60)) ; 30 minutes
+
+  ;; Define how frequently the cleanup process should run (default is every 10
+  ;; minutes):
+  (buffer-terminator-interval (* 10 60)) ; 10 minutes
+
+  :config
+  (buffer-terminator-mode 1))
+
+
+;; Helpful is an alternative to the built-in Emacs help that provides much more
+;; contextual information.
+(use-package helpful
+  :commands (helpful-callable
+             helpful-variable
+             helpful-key
+             helpful-command
+             helpful-at-point
+             helpful-function)
+  :bind
+  ([remap describe-command] . helpful-command)
+  ([remap describe-function] . helpful-callable)
+  ([remap describe-key] . helpful-key)
+  ([remap describe-symbol] . helpful-symbol)
+  ([remap describe-variable] . helpful-variable)
+  :custom
+  (helpful-max-buffers 7))
+
+;; bufferfile provides helper function to delete, rename or copy buffer files.
+(use-package bufferfile
+  :commands (bufferfile-copy
+             bufferfile-rename
+             bufferfile-delete)
+  :custom
+  ;; If non-nil, display messages during file renaming operations
+  (bufferfile-verbose nil)
+
+  ;; If non-nil, enable using version control (VC) when available
+  (bufferfile-use-vc nil)
+
+  ;; Specifies the action taken after deleting a file and killing its buffer.
+  (bufferfile-delete-switch-to 'parent-directory))
+
+;; aggressive-indent and highlight-defined enhance Elisp development.
+;; Enables automatic indentation of code while typing
+(use-package aggressive-indent
+  :commands aggressive-indent-mode
+  :hook
+  (emacs-lisp-mode . aggressive-indent-mode))
+
+;; Highlights function and variable definitions in Emacs Lisp mode
+(use-package highlight-defined
+  :commands highlight-defined-mode
+  :hook
+  (emacs-lisp-mode . highlight-defined-mode))
+
+;; Configure the `tab-bar-show` variable to 1 to display the tab bar exclusively
+;; when multiple tabs are open:
+(setopt tab-bar-show 1)
+
+;; font configuration
+(set-face-attribute 'default nil
+    :height 220
+    :weight 'normal 
+    :family "Iosevka Fixed Light Extended")
+
+(use-package treemacs
+  :ensure t
+  :defer t
+  :init
+  (with-eval-after-load 'winum
+    (define-key winum-keymap (kbd "M-0") #'treemacs-select-window))
+  :config
+  (progn
+    (setq treemacs-buffer-name-function            #'treemacs-default-buffer-name
+          treemacs-buffer-name-prefix              " *Treemacs-Buffer-"
+          treemacs-collapse-dirs                   (if treemacs-python-executable 3 0)
+          treemacs-deferred-git-apply-delay        0.5
+          treemacs-directory-name-transformer      #'identity
+          treemacs-display-in-side-window          t
+          treemacs-eldoc-display                   'simple
+          treemacs-file-event-delay                2000
+          treemacs-file-extension-regex            treemacs-last-period-regex-value
+          treemacs-file-follow-delay               0.2
+          treemacs-file-name-transformer           #'identity
+          treemacs-follow-after-init               t
+          treemacs-expand-after-init               t
+          treemacs-find-workspace-method           'find-for-file-or-pick-first
+          treemacs-git-command-pipe                ""
+          treemacs-goto-tag-strategy               'refetch-index
+          treemacs-header-scroll-indicators        '(nil . "^^^^^^")
+          treemacs-hide-dot-git-directory          t
+          treemacs-hide-dot-jj-directory           t
+          treemacs-indentation                     2
+          treemacs-indentation-string              " "
+          treemacs-is-never-other-window           nil
+          treemacs-max-git-entries                 5000
+          treemacs-missing-project-action          'ask
+          treemacs-move-files-by-mouse-dragging    t
+          treemacs-move-forward-on-expand          nil
+          treemacs-no-png-images                   nil
+          treemacs-no-delete-other-windows         t
+          treemacs-project-follow-cleanup          nil
+          treemacs-persist-file                    (expand-file-name ".cache/treemacs-persist" user-emacs-directory)
+          treemacs-position                        'left
+          treemacs-read-string-input               'from-child-frame
+          treemacs-recenter-distance               0.1
+          treemacs-recenter-after-file-follow      nil
+          treemacs-recenter-after-tag-follow       nil
+          treemacs-recenter-after-project-jump     'always
+          treemacs-recenter-after-project-expand   'on-distance
+          treemacs-litter-directories              '("/node_modules" "/.venv" "/.cask")
+          treemacs-project-follow-into-home        nil
+          treemacs-show-cursor                     nil
+          treemacs-show-hidden-files               t
+          treemacs-silent-filewatch                nil
+          treemacs-silent-refresh                  nil
+          treemacs-sorting                         'alphabetic-asc
+          treemacs-select-when-already-in-treemacs 'move-back
+          treemacs-space-between-root-nodes        t
+          treemacs-tag-follow-cleanup              t
+          treemacs-tag-follow-delay                1.5
+          treemacs-text-scale                      nil
+          treemacs-user-mode-line-format           nil
+          treemacs-user-header-line-format         nil
+          treemacs-wide-toggle-width               70
+          treemacs-width                           35
+          treemacs-width-increment                 1
+          treemacs-width-is-initially-locked       t
+          treemacs-workspace-switch-cleanup        nil)
+
+    ;; The default width and height of the icons is 22 pixels. If you are
+    ;; using a Hi-DPI display, uncomment this to double the icon size.
+    ;;(treemacs-resize-icons 44)
+
+    (treemacs-follow-mode t)
+    (treemacs-filewatch-mode t)
+    (treemacs-fringe-indicator-mode 'always)
+    (when treemacs-python-executable
+      (treemacs-git-commit-diff-mode t))
+
+    (pcase (cons (not (null (executable-find "git")))
+                 (not (null treemacs-python-executable)))
+      (`(t . t)
+       (treemacs-git-mode 'deferred))
+      (`(t . _)
+       (treemacs-git-mode 'simple)))
+
+    (treemacs-hide-gitignored-files-mode nil))
+  :bind
+  (:map global-map
+        ("M-0"       . treemacs-select-window)
+        ("C-x t 1"   . treemacs-delete-other-windows)
+        ("C-x t t"   . treemacs)
+        ("C-x t d"   . treemacs-select-directory)
+        ("C-x t B"   . treemacs-bookmark)
+        ("C-x t C-t" . treemacs-find-file)
+        ("C-x t M-t" . treemacs-find-tag)))
+
+(use-package treemacs-evil
+  :after (treemacs evil)
+  :ensure t)
+
+;; (use-package treemacs-projectile
+;;   :after (treemacs projectile)
+;;   :ensure t)
+
+;; (use-package treemacs-icons-dired
+;;   :hook (dired-mode . treemacs-icons-dired-enable-once)
+;;   :ensure t)
+;; 
+;; (use-package treemacs-magit
+;;   :after (treemacs magit)
+;;   :ensure t)
+;; 
+;; (use-package treemacs-persp ;;treemacs-perspective if you use perspective.el vs. persp-mode
+;;   :after (treemacs persp-mode) ;;or perspective vs. persp-mode
+;;   :ensure t
+;;   :config (treemacs-set-scope-type 'Perspectives))
+;; 
+;; (use-package treemacs-tab-bar ;;treemacs-tab-bar if you use tab-bar-mode
+;;   :after (treemacs)
+;;   :ensure t
+;;   :config (treemacs-set-scope-type 'Tabs))
+;; 
+;; (treemacs-start-on-boot)
+
+;; `vterm' is an Emacs terminal emulator that provides a fully interactive shell
+;; experience within Emacs, supporting features such as color, cursor movement,
+;; and advanced terminal capabilities. Unlike standard Emacs terminal modes,
+;; `vterm' utilizes the libvterm C library for high-performance emulation. This
+;; ensures accurate terminal behavior when running shell programs, text-based
+;; applications, and REPLs.
+(use-package vterm
+  :if (bound-and-true-p module-file-suffix)
+  :commands (vterm
+             vterm-send-string
+             vterm-send-return
+             vterm-send-key
+             vterm-module-compile)
+
+  :preface
+  (when noninteractive
+    ;; vterm unnecessarily triggers compilation of vterm-module.so upon loading.
+    ;; This prevents that during byte-compilation (`use-package' eagerly loads
+    ;; packages when compiling).
+    (advice-add #'vterm-module-compile :override #'ignore))
+
+  (defun my-vterm--setup ()
+    ;; Hide the mode-line
+    (setq mode-line-format nil)
+
+    ;; Inhibit early horizontal scrolling
+    (setq-local hscroll-margin 0)
+
+    ;; Suppress prompts for terminating active processes when closing vterm
+    (setq-local confirm-kill-processes nil))
+
+  :init
+  (add-hook 'vterm-mode-hook #'my-vterm--setup)
+
+  (setq vterm-timer-delay 0.05)  ; Faster vterm
+  (setq vterm-kill-buffer-on-exit t)
+  (setq vterm-max-scrollback 5000))
+
+;;; Enable automatic insertion and management of matching pairs of characters
+;;; (e.g., (), {}, "") globally using `electric-pair-mode'.
+(use-package elec-pair
+  :ensure nil
+  :commands (electric-pair-mode
+             electric-pair-local-mode
+             electric-pair-delete-pair)
+  :hook (after-init . electric-pair-mode))
+
+;; Set the fringes to match the pixel height of a character. This ensures the
+;; fringe is wide enough, scaling dynamically with the current font size.
+(fringe-mode (frame-char-width))
+
+;; When Delete Selection mode is enabled, typed text replaces the selection
+;; if the selection is active.
+(delete-selection-mode 1)
+
+;; Display the current line and column numbers in the mode line
+(setq line-number-mode t)
+(setq column-number-mode t)
+(setq mode-line-position-column-line-format '("%l:%C"))
+
+;; Display of line numbers in the buffer:
+(setq-default display-line-numbers-type 'relative)
+(dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook))
+  (add-hook hook #'display-line-numbers-mode))
+
+(use-package which-key
+  :ensure nil ; builtin
+  :commands which-key-mode
+  :hook (after-init . which-key-mode)
+  :custom
+  (which-key-idle-delay 1.5)
+  (which-key-idle-secondary-delay 0.25)
+  (which-key-add-column-padding 1)
+  (which-key-max-description-length 40))
+
+;; Support for Git files (.gitconfig, .gitignore, .gitattributes...)
+(use-package git-modes
+  :commands (gitattributes-mode
+             gitconfig-mode
+             gitignore-mode)
+  :mode (("/\\.gitignore\\'" . gitignore-mode)
+         ("/info/exclude\\'" . gitignore-mode)
+         ("/git/ignore\\'" . gitignore-mode)
+         ("/.gitignore_global\\'" . gitignore-mode)  ; jc-dotfiles
+
+         ("/\\.gitconfig\\'" . gitconfig-mode)
+         ("/\\.git/config\\'" . gitconfig-mode)
+         ("/modules/.*/config\\'" . gitconfig-mode)
+         ("/git/config\\'" . gitconfig-mode)
+         ("/\\.gitmodules\\'" . gitconfig-mode)
+         ("/etc/gitconfig\\'" . gitconfig-mode)
+
+         ("/\\.gitattributes\\'" . gitattributes-mode)
+         ("/info/attributes\\'" . gitattributes-mode)
+         ("/git/attributes\\'" . gitattributes-mode)))
+
+(use-package lua-mode
+  :commands lua-mode
+  :mode ("\\.lua\\'" . lua-mode))
