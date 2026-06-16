@@ -1,3 +1,5 @@
+;;; packages.el -*- lexical-binding: t; -*-
+
 (package! org-fragtog)
 (package! eldoc-box)
 

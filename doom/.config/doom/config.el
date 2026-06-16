@@ -1,3 +1,5 @@
+;;; config.el -*- lexical-binding: t; -*-
+
 ;; (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 (setq doom-font (font-spec :family "Iosevka Fixed Light Extended" :size 16.0))
