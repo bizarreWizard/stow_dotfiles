@@ -26,14 +26,14 @@
 (setq eldoc-idle-delay 0.0)
 
 (after! eldoc-box
-  ;; Disable automatic popup-on-hover
+  ;; disable automatic popup-on-hover
   (remove-hook 'eldoc-box-hover-at-point-functions
                #'eldoc-box--hover-at-point)
 
-  ;; Make popup appear near point instead of weird screen corner
+  ;; make popup appear near point instead of weird screen corner
   (setq eldoc-box-position-function #'eldoc-box--default-at-point-position-function)
 
-  ;; Optional cosmetics
+  ;; keybind to clear box
   (setq eldoc-box-clear-with-C-g t))
 
 (map! :n "K" #'eldoc-box-help-at-point)
@@ -64,6 +64,13 @@
 
 ; agenda config
 (setq org-agenda-files '("~/org_notes/agenda/"))
+
+; remove evil icon from modeline
+(setq doom-modeline-modal-icon nil)
+
+; evil mode cursor shape and color
+(setq evil-insert-state-cursor '(box "orange"))
+(setq evil-visual-state-cursor '(box "white"))
 
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
@@ -100,6 +107,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-dark+)
+(setq doom-dark+-blue-modeline t)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
