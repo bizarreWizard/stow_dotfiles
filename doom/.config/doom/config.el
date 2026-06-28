@@ -42,7 +42,7 @@
 
 (setq display-time-load-average nil)
 (setq display-time-default-load-average nil)
-(setq display-time-format "%d-%m-%y %H:%M")
+(setq display-time-format "%d/%m/%y %H:%M")
 (display-time-mode)
 
 (setq eglot-menu-string "LSP")
@@ -61,6 +61,47 @@
 ; vterm config
 (after! vterm
   (setq vterm-timer-delay 0.01))
+
+; dashboard ascii art override
+
+(defun my-ascii-banner ()
+  "Return a custom ASCII logo banner."
+  (propertize
+   (string-join
+    '("                       .,,uod8B8bou,,.                             "
+      "              ..,uod8BBBBBBBBBBBBBBBBRPFT?l!i:.                    "
+      "         ,=m8BBBBBBBBBBBBBBBRPFT?!||||||||||||||                   "
+      "         !...:!TVBBBRPFT||||||||||!!^^'''   ||||                   "
+      "         !.......:!?|||||!!^^'''            ||||                   "
+      "         !.........||||                     ||||                   "
+      "         !.........||||                     ||||                   "
+      "         !.........||||                     ||||                   "
+      "         !.........||||       D O O M       ||||                   "
+      "         !.........||||      E M A C S      ||||                   "
+      "         !.........||||                     ||||                   "
+      "         `.........||||                    ,||||                   "
+      "          .;.......||||               _.-!!|||||                   "
+      "   .,uodWBBBBb.....||||       _.-!!|||||||||!:'                    "
+      "YBBBBBBBBBBBBBBb..!|||:..-!!|||||||!iof68BBBBBb....                "
+      "..YBBBBBBBBBBBBBBb!!||||||||!iof68BBBBBBRPFT?!::   `.              "
+      "....YBBBBBBBBBBBBBBbaaitf68BBBBBBRPFT?!:::::::::     `.            "
+      "......YBBBBBBBBBBBBBBBBBBBRPFT?!::::::;:!^\"`;:::       `.         "
+      "........YBBBBBBBBBBRPFT?!::::::::::^''...::::::;         iBBbo.    "
+      "`..........YBRPFT?!::::::::::::::::::::::::;iof68bo.      WBBBBbo. "
+      "  `..........:::::::::::::::::::::::;iof688888888888b.     .YBBBP^'"
+      "    `........::::::::::::::::;iof688888888888888888888b.     `     "
+      "      `......:::::::::;iof688888888888888888888888888888b.         "
+      "        `....:::;iof688888888888888888888888888888888899fT!        "
+      "          `..::!8888888888888888888888888888888899fT|!^..          "
+      "            `: !!988888888888888888888888899fT|!^..                "
+      "                `!!8888888888888888899fT|!^..                      "
+      "                  `!988888888899fT|!^..                            "
+      "                    `!9899fT|!^..                                  "
+      "                      `!^.....                                     ")
+    "\n")
+   'face '+dashboard-banner))
+
+(setq +dashboard-ascii-banner-fn #'my-ascii-banner)
 
 ; agenda config
 (setq org-agenda-files '("~/org_notes/agenda/"))
