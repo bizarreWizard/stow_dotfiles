@@ -2,6 +2,7 @@
 
 (package! org-fragtog)
 (package! eldoc-box)
+(package! ghostel)
 
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
