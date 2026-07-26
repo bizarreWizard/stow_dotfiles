@@ -12,6 +12,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(+dashboard-banner ((t (:inherit font-lock-comment-face :foreground "royal blue"))))
  '(doom-modeline-buffer-file ((t (:inherit mode-line-emphasis :foreground "light sky blue" :weight regular))))
  '(doom-modeline-buffer-modified ((t (:inherit mode-line-emphasis :foreground "light steel blue" :weight regular))))
  '(doom-modeline-buffer-path ((t (:inherit doom-modeline-emphasis :foreground "dodger blue" :weight regular))))

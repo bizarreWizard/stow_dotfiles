@@ -82,14 +82,14 @@
       "         `.........||||                    ,||||                   "
       "          .;.......||||               _.-!!|||||                   "
       "   .,uodWBBBBb.....||||       _.-!!|||||||||!:'                    "
-      "YBBBBBBBBBBBBBBb..!|||:..-!!|||||||!iof68BBBBBb....                "
-      "..YBBBBBBBBBBBBBBb!!||||||||!iof68BBBBBBRPFT?!::   `.              "
-      "....YBBBBBBBBBBBBBBbaaitf68BBBBBBRPFT?!:::::::::     `.            "
-      "......YBBBBBBBBBBBBBBBBBBBRPFT?!::::::;:!^\"`;:::       `.         "
-      "........YBBBBBBBBBBRPFT?!::::::::::^''...::::::;         iBBbo.    "
-      "`..........YBRPFT?!::::::::::::::::::::::::;iof68bo.      WBBBBbo. "
-      "  `..........:::::::::::::::::::::::;iof688888888888b.     .YBBBP^'"
-      "    `........::::::::::::::::;iof688888888888888888888b.     `     "
+      "YBBBBBBBBBBBBBBb..!|||:..-!!|||||||!iof68BBBBBb.                   "
+      "..YBBBBBBBBBBBBBBb!!||||||||!iof68BBBBBBRPFT?!::                   "
+      "....YBBBBBBBBBBBBBBbaaitf68BBBBBBRPFT?!:::::::::                   "
+      "......YBBBBBBBBBBBBBBBBBBBRPFT?!::::::;:!^\"`;::                   "
+      "........YBBBBBBBBBBRPFT?!::::::::::^''...::::::;                   "
+      "`..........YBRPFT?!::::::::::::::::::::::::;iof68bo.               "
+      "  `..........:::::::::::::::::::::::;iof688888888888b.             "
+      "    `........::::::::::::::::;iof688888888888888888888b.           "
       "      `......:::::::::;iof688888888888888888888888888888b.         "
       "        `....:::;iof688888888888888888888888888888888899fT!        "
       "          `..::!8888888888888888888888888888888899fT|!^..          "
@@ -148,7 +148,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-dark+)
-(setq doom-dark+-blue-modeline t)
+; (setq doom-dark+-blue-modeline t)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
