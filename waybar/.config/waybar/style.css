@@ -1,13 +1,13 @@
 @import url("specific.css");
 
 window#waybar {
-    background: transparent;
+    background: black;
     border-bottom: 0px transparent;
-    color: black;
+    color: lime;
 }
 
 #window {
-    color: black;
+    color: lime;
 }
 
 tooltip {
@@ -19,14 +19,17 @@ tooltip label {
 }
 
 #workspaces button {
-    padding: 0 5px;
-    background: transparent;
-    color: black;
+    padding: 0 3px;
+    margin: 2 2px;
+    background: rgba(34, 34, 34, 1);
+    color: gray;
+    border: 1px solid rgba(44, 44, 44, 1);
 }
 
 #workspaces button.active {
-    color: aqua;
-    background: black;
+    color: white;
+    background: rgba(40, 85, 119, 1);
+    border: 1px solid rgba(62, 106, 139, 1);
 }
 
 #mode, #clock, #battery {
@@ -39,7 +42,7 @@ tooltip label {
 }
 
 #clock {
-    color: black;
+    color: lime;
     background: transparent;
 }
 

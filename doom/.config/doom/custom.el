@@ -6,6 +6,7 @@
  ;; If there is more than one, they won't work right.
  '(+dashboard-functions
    '(+dashboard-widget-banner +dashboard-widget-spacer +dashboard-widget-loaded))
+ '(flycheck-disabled-checkers nil)
  '(package-selected-packages '(kanagawa-themes)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

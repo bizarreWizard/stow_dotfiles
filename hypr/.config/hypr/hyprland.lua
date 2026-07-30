@@ -41,11 +41,11 @@ hl.config({
 	},
 
 	general = {
-		gaps_in = 1,
-		gaps_out = 2,
+		gaps_in = 0,
+		gaps_out = 0,
 		border_size = 1,
 		col = {
-			active_border = "rgba(00d100ee)",
+			active_border = "rgba(40, 85, 119, 1)",
 			inactive_border = "rgba(595959aa)",
 		},
 		resize_on_border = false,

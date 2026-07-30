@@ -1,4 +1,4 @@
-;;; config.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 ;; (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
@@ -68,36 +68,36 @@
   "Return a custom ASCII logo banner."
   (propertize
    (string-join
-    '("                       .,,uod8B8bou,,.                             "
-      "              ..,uod8BBBBBBBBBBBBBBBBRPFT?l!i:.                    "
-      "         ,=m8BBBBBBBBBBBBBBBRPFT?!||||||||||||||                   "
-      "         !...:!TVBBBRPFT||||||||||!!^^'''   ||||                   "
-      "         !.......:!?|||||!!^^'''            ||||                   "
-      "         !.........||||                     ||||                   "
-      "         !.........||||                     ||||                   "
-      "         !.........||||                     ||||                   "
-      "         !.........||||       D O O M       ||||                   "
-      "         !.........||||      E M A C S      ||||                   "
-      "         !.........||||                     ||||                   "
-      "         `.........||||                    ,||||                   "
-      "          .;.......||||               _.-!!|||||                   "
-      "   .,uodWBBBBb.....||||       _.-!!|||||||||!:'                    "
-      "YBBBBBBBBBBBBBBb..!|||:..-!!|||||||!iof68BBBBBb.                   "
-      "..YBBBBBBBBBBBBBBb!!||||||||!iof68BBBBBBRPFT?!::                   "
-      "....YBBBBBBBBBBBBBBbaaitf68BBBBBBRPFT?!:::::::::                   "
-      "......YBBBBBBBBBBBBBBBBBBBRPFT?!::::::;:!^\"`;::                   "
-      "........YBBBBBBBBBBRPFT?!::::::::::^''...::::::;                   "
-      "`..........YBRPFT?!::::::::::::::::::::::::;iof68bo.               "
-      "  `..........:::::::::::::::::::::::;iof688888888888b.             "
-      "    `........::::::::::::::::;iof688888888888888888888b.           "
-      "      `......:::::::::;iof688888888888888888888888888888b.         "
-      "        `....:::;iof688888888888888888888888888888888899fT!        "
-      "          `..::!8888888888888888888888888888888899fT|!^..          "
-      "            `: !!988888888888888888888888899fT|!^..                "
-      "                `!!8888888888888888899fT|!^..                      "
-      "                  `!988888888899fT|!^..                            "
-      "                    `!9899fT|!^..                                  "
-      "                      `!^..                                        ")
+    '("                        .,,uod8B8bou,,.                      "
+      "               ..,uod8BBBBBBBBBBBBBBBBRPFT?l!i:.             "
+      "          ,=m8BBBBBBBBBBBBBBBRPFT?!||||||||||||||            "
+      "          !...:!TVBBBRPFT||||||||||!!^^'''   ||||            "
+      "          !.......:!?|||||!!^^'''            ||||            "
+      "          !.........||||                     ||||            "
+      "          !.........||||                     ||||            "
+      "          !.........||||                     ||||            "
+      "          !.........||||       D O O M       ||||            "
+      "          !.........||||      E M A C S      ||||            "
+      "          !.........||||                     ||||            "
+      "          `.........||||                    ,||||            "
+      "           .;.......||||               _.-!!|||||            "
+      "    .,uodWBBBBb.....||||       _.-!!|||||||||!:'             "
+      " YBBBBBBBBBBBBBBb..!|||:..-!!|||||||!iof68BBBBBb.            "
+      " ..YBBBBBBBBBBBBBBb!!||||||||!iof68BBBBBBRPFT?!::            "
+      " ....YBBBBBBBBBBBBBBbaaitf68BBBBBBRPFT?!:::::::::            "
+      " ......YBBBBBBBBBBBBBBBBBBBRPFT?!::::::;:!^\"`;:::            "
+      " ........YBBBBBBBBBBRPFT?!::::::::::^''...::::::;            "
+      " `..........YBRPFT?!::::::::::::::::::::::::;iof68bo.        "
+      "   `..........:::::::::::::::::::::::;iof688888888888b.      "
+      "     `........::::::::::::::::;iof688888888888888888888b.    "
+      "       `......:::::::::;iof688888888888888888888888888888b.  "
+      "         `....:::;iof688888888888888888888888888888888899fT! "
+      "           `..::!8888888888888888888888888888888899fT|!^..   "
+      "             `: !!988888888888888888888888899fT|!^..         "
+      "                 `!!8888888888888888899fT|!^..               "
+      "                   `!988888888899fT|!^..                     "
+      "                     `!9899fT|!^..                           "
+      "                       `!^..                                 ")
     "\n")
    'face '+dashboard-banner))
 
@@ -113,11 +113,8 @@
 (setq evil-insert-state-cursor '(box "orange"))
 (setq evil-visual-state-cursor '(box "white"))
 
-;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
-
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
-
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.

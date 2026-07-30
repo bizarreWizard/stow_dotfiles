@@ -2,19 +2,20 @@
   "include": ["./specific.jsonc"],
   "layer": "top",
   "height": 25,
-  "spacing": 10,
+  "spacing": 0,
+  "position": "bottom",
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
-  "modules-center": ["clock"],
-  "modules-right": ["cpu", "memory", "pulseaudio", "network", "battery"],
+  "modules-right": ["cpu", "memory", "network", "pulseaudio", "battery", "clock"],
   "hyprland/window": {},
   "battery": {
     "format": "{capacity}% {icon}",
     "format-icons": ["", "", "", "", ""],
   },
   "clock": {
-    "format": "{:%H:%M}",
+    "format": "| {:%d.%m.%y %T}",
     "format-alt": "{:%A, %B %d, %Y (%R)}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "interval": 1,
     "calendar": {
       "mode": "month",
       "mode-mon-col": 3,
@@ -60,7 +61,7 @@
     "inverval": 10,
     "format": "{ifname}",
     //"format-wifi": "[Network: ↓ {bandwidthDownBytes}, ↑ {bandwidthUpBytes}] ",
-    "format-ethernet": "[Network: ↓ {bandwidthDownBytes}, ↑ {bandwidthUpBytes}] ",
+    "format-ethernet": "| ↓ {bandwidthDownBytes}, ↑ {bandwidthUpBytes} ",
     "format-disconnected": "ERROR: no connection", //An empty format will hide the module.
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
@@ -71,9 +72,11 @@
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-window-separator": "",
+    /*
     "persistent-workspaces": {
       "*": 5,
     },
+    */
     /*
     "workspace-taskbar": {
       "enable": true,
