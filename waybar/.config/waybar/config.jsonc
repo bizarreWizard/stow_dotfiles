@@ -1,18 +1,21 @@
 {
+  "custom/separator": {
+      "format": "<span color='#808080'><b> | </b></span>"
+  },
   "include": ["./specific.jsonc"],
   "layer": "top",
   "height": 25,
   "spacing": 0,
   "position": "bottom",
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
-  "modules-right": ["cpu", "memory", "network", "pulseaudio", "battery", "clock"],
+  "fixed-center": false,
   "hyprland/window": {},
   "battery": {
-    "format": "{capacity}% {icon}",
+    "format": "Bat {capacity}%",
     "format-icons": ["", "", "", "", ""],
   },
   "clock": {
-    "format": "| {:%d.%m.%y %T}",
+    "format": "{:%d.%m.%y %T}",
     "format-alt": "{:%A, %B %d, %Y (%R)}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "interval": 1,
@@ -37,7 +40,7 @@
     },
   },
   "pulseaudio": {
-    //"format": "[Volume: {volume}%]",
+    "format": "Vol {volume}%",
     "format-bluetooth": "{volume}% {icon}",
     //"format-muted": "",
     "format-icons": {
@@ -58,10 +61,10 @@
   },
   "network": {
     //"interface": "eno1",
-    "inverval": 10,
+    "inverval": 2,
     "format": "{ifname}",
     //"format-wifi": "[Network: ↓ {bandwidthDownBytes}, ↑ {bandwidthUpBytes}] ",
-    "format-ethernet": "| ↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes} ",
+    "format-ethernet": "E ↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}",
     "format-disconnected": "ERROR: no connection", //An empty format will hide the module.
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
@@ -90,16 +93,16 @@
   "hyprland/window": {
     "format": " [ {} ]",
     "rewrite": {
-      " \\[  \\]": " [ void ]",
-    },
+      " \\[  \\]": " [ void ]"
+    }
   },
   "cpu": {
-    "interval": 2,
-    //"format": "[CPU: {usage}% (avg. {avg_frequency} GHz)]",
+    "format": "CPU {usage}% (avg. {avg_frequency} GHz)",
+    "interval": 2
   },
   "memory": {
+    "format": "RAM {percentage}% (Swap {swapPercentage}%)",
     "interval": 2,
-    //"format": "[Mem: {percentage}% (Swap: {swapPercentage}%)]",
-    "max-length": 30,
-  },
+    "max-length": 30
+  }
 }

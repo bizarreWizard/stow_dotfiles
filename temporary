@@ -11,3 +11,15 @@
 
 
 monitor=,1920x1200@60,auto,auto
+
+"modules-right": [
+    "cpu", 
+    "custom/separator", 
+    "memory", 
+    "custom/separator", 
+    "network", 
+    "custom/separator", 
+    "pulseaudio", 
+    "custom/separator", 
+    "clock"
+]

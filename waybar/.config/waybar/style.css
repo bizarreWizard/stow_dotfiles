@@ -1,5 +1,9 @@
 @import url("specific.css");
 
+.modules-right {
+    padding-right: 10px;
+}
+
 window#waybar {
     background: black;
     border-bottom: 0px transparent;
@@ -33,7 +37,7 @@ tooltip label {
 }
 
 #mode, #clock, #battery {
-    padding: 0 10px;
+    padding: 0 0px;
 }
 
 #mode {
