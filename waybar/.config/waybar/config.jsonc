@@ -65,7 +65,7 @@
   },
   "network": {
     //"interface": "eno1",
-    "inverval": 2,
+    "interval": 2,
     "format": "{ifname}",
     "format-wifi": "W ↓ {bandwidthDownBytes}, ↑ {bandwidthUpBytes}",
     "format-ethernet": "E ↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}",
