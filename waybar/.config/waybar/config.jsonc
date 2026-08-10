@@ -7,15 +7,19 @@
   "height": 25,
   "spacing": 0,
   "position": "bottom",
-  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-left": ["sway/workspaces", "custom/separator", "sway/window", "custom/separator"],
   "fixed-center": false,
   "hyprland/window": {},
   "battery": {
-    "format": "Bat {capacity}%",
-    "format-icons": ["", "", "", "", ""],
+    "states": {
+      "warning": 50,
+      "critical": 25
+    },
+    "format-discharging": "↓ Bat {capacity}% ({time} left)",
+    "format-charging": "↑ Bat {capacity}% ({time} to full)"
   },
   "clock": {
-    "format": "{:%d.%m.%y %T}",
+    "format": "{:%d.%m.%y (%a) %T}",
     "format-alt": "{:%A, %B %d, %Y (%R)}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "interval": 1,
@@ -63,7 +67,7 @@
     //"interface": "eno1",
     "inverval": 2,
     "format": "{ifname}",
-    //"format-wifi": "[Network: ↓ {bandwidthDownBytes}, ↑ {bandwidthUpBytes}] ",
+    "format-wifi": "W ↓ {bandwidthDownBytes}, ↑ {bandwidthUpBytes}",
     "format-ethernet": "E ↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}",
     "format-disconnected": "ERROR: no connection", //An empty format will hide the module.
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
@@ -97,12 +101,30 @@
     }
   },
   "cpu": {
+    "states": {
+      "warning": 50,
+      "critical": 75
+    },
     "format": "CPU {usage}% (avg. {avg_frequency} GHz)",
     "interval": 2
   },
   "memory": {
+    "states": {
+      "warning": 50,
+      "critical": 75
+    },
     "format": "RAM {percentage}% (Swap {swapPercentage}%)",
     "interval": 2,
     "max-length": 30
+  },
+  "sway/window": {
+      "format": "{}",
+      "rewrite": {
+          "": "empty"
+      }
+  },
+  "disk": {
+    "path": "/home",
+    "format": "Disk: {percentage_used}% ({used}/{total})"
   }
 }

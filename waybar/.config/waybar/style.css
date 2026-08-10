@@ -7,7 +7,7 @@
 window#waybar {
     background: black;
     border-bottom: 0px transparent;
-    color: lime;
+    color: white;
 }
 
 #window {
@@ -30,33 +30,31 @@ tooltip label {
     border: 1px solid rgba(44, 44, 44, 1);
 }
 
-#workspaces button.active {
+#workspaces button.focused {
     color: white;
     background: rgba(40, 85, 119, 1);
     border: 1px solid rgba(62, 106, 139, 1);
 }
 
+/*
 #mode, #clock, #battery {
     padding: 0 0px;
 }
+*/
 
 #mode {
     background: #64727D;
     border-bottom: 3px solid white;
 }
 
-#clock {
-    color: lime;
-    background: transparent;
-}
+#memory {color: lime;}
+#memory.warning {color: yellow;}
+#memory.critical {color: red;}
 
-#battery {
-    color: lime;
-}
-
-#battery.charging {
-    color: white;
-}
+#battery {color: lime;}
+#battery.warning {color: yellow;}
+#battery.critical {color: red;}
+#battery.charging {color: cyan;}
 
 @keyframes blink {
     to {
@@ -65,6 +63,14 @@ tooltip label {
     }
 }
 
+#network {color: lime}
+#network.disconnected {color: red}
+
+#cpu {color: lime}
+#cpu.warning {color: yellow}
+#cpu.critical {color: red}
+
+/*
 #battery.warning:not(.charging) {
     background: #f53c3c;
     color: white;
@@ -74,3 +80,4 @@ tooltip label {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
+*/
