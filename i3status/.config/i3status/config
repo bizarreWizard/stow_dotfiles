@@ -1,0 +1,61 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        interval = 5
+}
+
+order += "ipv6"
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "battery all"
+order += "disk /home"
+order += "cpu_usage"
+order += "memory"
+order += "tztime local"
+
+ipv6 {
+        format_up = "Interface %iface: ok"
+        format_down = "Interface %iface: down"
+}
+
+wireless _first_ {
+        format_up = "W: up (%quality at %essid)"
+        format_down = "W: down"
+}
+
+ethernet _first_ {
+        format_up = "E: %speed"
+        format_down = "E: down"
+}
+
+battery all {
+        format = "Power %status %percentage %remaining"
+        format_down = ""
+        low_threshold = 20
+        threshold_type = "percentage"
+}
+
+disk "/home" {
+        format = "Disk %percentage_used (%used/%total)"
+}
+
+cpu_usage {
+        format = "CPU %usage"
+}
+
+memory {
+        format = "RAM %percentage_used"
+        threshold_degraded = 20%
+        threshold_critical = 10%
+}
+
+tztime local {
+        format = "%d-%m-%Y %H:%M:%S"
+}
