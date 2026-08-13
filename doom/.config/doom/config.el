@@ -2,10 +2,10 @@
 
 ;; (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
-(setq doom-font (font-spec :family "Iosevka Fixed Light Extended" :size 18.0))
+(setq doom-font (font-spec :family "Iosevka Fixed Light Extended" :size 16.0))
 
 ; this should be useless in hyprland
-(setq initial-frame-alist '((width . 135) (height . 45)))
+(setq initial-frame-alist '((width . 110) (height . 35)))
 
 (setq org-preview-latex-default-process 'dvisvgm)
 
