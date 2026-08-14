@@ -23,3 +23,8 @@ monitor=,1920x1200@60,auto,auto
     "custom/separator", 
     "clock"
 ]
+
+
+(setq doom-font (font-spec :family "Iosevka Fixed Light Extended" :size 16.0))
+
+(setq initial-frame-alist '((width . 110) (height . 35)))

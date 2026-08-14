@@ -8,3 +8,5 @@ hypr/.config/hypr/hyprpaper.conf
 
 waybar/.config/waybar/specific.css
 waybar/.config/waybar/specific.jsonc
+
+doom/.config/doom/specific.el

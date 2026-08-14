@@ -1,11 +1,6 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-;; (add-to-list 'initial-frame-alist '(fullscreen . maximized))
-
-(setq doom-font (font-spec :family "Iosevka Fixed Light Extended" :size 16.0))
-
-; this should be useless in hyprland
-(setq initial-frame-alist '((width . 110) (height . 35)))
+(load! "specific")
 
 (setq org-preview-latex-default-process 'dvisvgm)
 
@@ -16,7 +11,7 @@
     (setq org-highlight-latex-and-related '(latex script entities))
     (setq org-src-fontify-natively t)
     (setq org-format-latex-options
-          (plist-put org-format-latex-options :scale 1.4))
+          (plist-put org-format-latex-options :scale 1.6))
     (setq org-format-latex-options
           (plist-put org-format-latex-options :background "Transparent"))
 )
@@ -113,9 +108,6 @@
 (setq evil-insert-state-cursor '(box "orange"))
 (setq evil-visual-state-cursor '(box "white"))
 
-;; Place your private configuration here! Remember, you do not need to run 'doom
-;; sync' after modifying this file!
-
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 ;; (setq user-full-name "John Doe"
@@ -154,7 +146,6 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org_notes/")
-
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `with-eval-after-load' block, otherwise Doom's defaults may override your
