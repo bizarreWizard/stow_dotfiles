@@ -7,7 +7,7 @@
   "height": 25,
   "spacing": 0,
   "position": "bottom",
-  "modules-left": ["sway/workspaces", "custom/separator", "sway/window", "custom/separator"],
+  "modules-left": ["hyprland/workspaces", "custom/separator", "hyprland/window", "custom/separator"],
   "fixed-center": false,
   "hyprland/window": {},
   "battery": {
@@ -95,9 +95,9 @@
     */
   },
   "hyprland/window": {
-    "format": " [ {} ]",
+    "format": "{}",
     "rewrite": {
-      " \\[  \\]": " [ void ]"
+      "": "void"
     }
   },
   "cpu": {

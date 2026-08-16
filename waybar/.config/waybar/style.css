@@ -30,7 +30,7 @@ tooltip label {
     border: 1px solid rgba(44, 44, 44, 1);
 }
 
-#workspaces button.focused {
+#workspaces button.active {
     color: white;
     background: rgba(40, 85, 119, 1);
     border: 1px solid rgba(62, 106, 139, 1);
