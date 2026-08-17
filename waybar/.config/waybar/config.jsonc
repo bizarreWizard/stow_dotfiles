@@ -3,7 +3,7 @@
       "format": "<span color='#808080'><b> | </b></span>"
   },
   "include": ["./specific.jsonc"],
-  "layer": "top",
+  "layer": "bottom",
   "height": 25,
   "spacing": 0,
   "position": "bottom",

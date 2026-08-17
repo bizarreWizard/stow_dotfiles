@@ -3,7 +3,7 @@ require("specific")
 -- DEFAULTS
 local terminal    = "kitty"
 local fileManager = "dolphin"
-local menu        = "hyprlauncher"
+local menu        = "rofi -show run"
 
 -- AUTORUN
 hl.on("hyprland.start", function()
