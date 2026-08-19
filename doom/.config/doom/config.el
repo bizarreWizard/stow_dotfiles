@@ -108,6 +108,9 @@
 (setq evil-insert-state-cursor '(box "orange"))
 (setq evil-visual-state-cursor '(box "white"))
 
+; disable confirmation prompt when quitting emacs
+(setq confirm-kill-emacs nil)
+
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 ;; (setq user-full-name "John Doe"
