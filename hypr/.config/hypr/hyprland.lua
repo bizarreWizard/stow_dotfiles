@@ -60,10 +60,10 @@ hl.config({
 		inactive_opacity = 1.0,
     -- inactive_opacity = 0.92,
 		blur = {
-			enabled = true,
-			size = 3,
-			passes = 1,
-			vibrancy = 0.1696,
+			enabled = false,
+			-- size = 3,
+			-- passes = 1,
+			-- vibrancy = 0.1696,
 		},
 		shadow = {
 			enabled = true,
@@ -84,6 +84,11 @@ hl.config({
     misc = {
         disable_hyprland_logo = true,
         force_default_wallpaper = 0,
+    },
+
+    ecosystem = {
+        no_update_news = true,
+        no_donation_nag = true,
     }
 })
 
