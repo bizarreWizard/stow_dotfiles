@@ -111,6 +111,12 @@
 ; disable confirmation prompt when quitting emacs
 (setq confirm-kill-emacs nil)
 
+; set black background
+(custom-theme-set-faces!
+  'doom-dark+
+  '(default :background "black")
+  '(eldoc-box-body :background "black" :foreground "white"))
+
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 ;; (setq user-full-name "John Doe"
@@ -139,7 +145,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-tokyo-night)
+(setq doom-theme 'doom-dark+)
 ; (setq doom-dark+-blue-modeline t)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
