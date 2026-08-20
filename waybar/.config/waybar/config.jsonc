@@ -7,7 +7,7 @@
   "height": 25,
   "spacing": 0,
   "position": "bottom",
-  "modules-left": ["hyprland/workspaces", "custom/separator", "hyprland/window", "custom/separator"],
+  "modules-left": ["hyprland/workspaces"],
   "fixed-center": false,
   "hyprland/window": {},
   "battery": {
@@ -67,7 +67,7 @@
     //"interface": "eno1",
     "interval": 2,
     "format": "{ifname}",
-    "format-wifi": "W ↓ {bandwidthDownBytes}, ↑ {bandwidthUpBytes}",
+    "format-wifi": "W ↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}",
     "format-ethernet": "E ↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}",
     "format-disconnected": "ERROR: no connection", //An empty format will hide the module.
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
@@ -125,6 +125,6 @@
   },
   "disk": {
     "path": "/home",
-    "format": "Disk: {percentage_used}% ({used}/{total})"
+    "format": "Disk {percentage_used}% ({used}/{total})"
   }
 }
