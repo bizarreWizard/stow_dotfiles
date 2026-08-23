@@ -4,6 +4,10 @@
     padding-right: 10px;
 }
 
+.modules-left {
+    padding-left: 2px;
+}
+
 window#waybar {
     background: black;
     border-bottom: 0px transparent;
@@ -27,20 +31,15 @@ tooltip label {
     margin: 2 2px;
     background: rgba(34, 34, 34, 1);
     color: gray;
-    border: 1px solid rgba(44, 44, 44, 1);
+    border: 2px solid rgba(44, 44, 44, 1);
+    border-radius: 999;
 }
 
 #workspaces button.active {
     color: white;
     background: rgba(40, 85, 119, 1);
-    border: 1px solid rgba(62, 106, 139, 1);
+    border: 2px solid rgba(62, 106, 139, 1);
 }
-
-/*
-#mode, #clock, #battery {
-    padding: 0 0px;
-}
-*/
 
 #mode {
     background: #64727D;
