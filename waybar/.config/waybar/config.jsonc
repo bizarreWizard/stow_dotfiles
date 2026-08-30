@@ -15,6 +15,7 @@
       "warning": 50,
       "critical": 25
     },
+    "interval": 6,
     "format-discharging": "↓ Bat {capacity}% ({time} left)",
     "format-charging": "↑ Bat {capacity}% ({time} to full)"
   },
