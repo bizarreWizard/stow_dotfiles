@@ -11,11 +11,13 @@ PS1="\[\e[38;5;34m\]\u\[\e[38;5;156m\]@\[\e[38;5;46m\]\h \[\e[38;5;154m\]\w \[\0
 
 # custom alias list
 alias upsys="sudo pacman -Syu"
-alias dup=".config/emacs/bin/./doom upgrade"
-alias dsync=".config/emacs/bin/./doom sync"
-alias ddoc=".config/emacs/bin/./doom doctor"
+alias dup="~/.config/emacs/bin/./doom upgrade"
+alias dsync="~/.config/emacs/bin/./doom sync"
+alias ddoc="~/.config/emacs/bin/./doom doctor"
 alias slp="systemctl suspend"
+alias off="poweroff"
 alias ll="ls -lh"
-alias la="ls -lA"
+alias la="ls -lhA"
 alias c="clear"
 alias q="exit"
+alias p="cd .."
