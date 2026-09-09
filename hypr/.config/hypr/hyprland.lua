@@ -8,6 +8,7 @@ local menu        = "rofi -show run"
 -- AUTORUN
 hl.on("hyprland.start", function()
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
+    hl.exec_cmd("systemctl --user start emacs.service")
     hl.exec_cmd("waybar")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("cliphist")
@@ -102,7 +103,8 @@ hl.bind(mainMod .. " + CTRL + SHIFT + backslash", hl.dsp.exec_cmd("grim -g \"$(s
 
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.exec_cmd("firefox"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("steam"))
-hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("emacs"))
+-- hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("emacs"))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("emacsclient -c"))
 hl.bind(mainMod .. " + SHIFT + CTRL + E", hl.dsp.exec_cmd("emacs --init-directory .minimal-emacs.d"))
 hl.bind(mainMod .. " + SHIFT + Z", hl.dsp.exec_cmd("zathura"))
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))

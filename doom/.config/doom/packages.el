@@ -5,7 +5,7 @@
 (package! ghostel)
 
 ; disable solaire mode globally
-(package! solaire-mode :disable t)
+; (package! solaire-mode :disable t)
 
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el

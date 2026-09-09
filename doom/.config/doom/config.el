@@ -111,11 +111,13 @@
 ; disable confirmation prompt when quitting emacs
 (setq confirm-kill-emacs nil)
 
-; set black background
-(custom-theme-set-faces!
-  'doom-dark+
-  '(default :background "black")
-  '(eldoc-box-body :background "black" :foreground "white"))
+; set doom-dark+ black background
+; (custom-theme-set-faces!
+;   'doom-dark+
+;   '(default :background "black")
+;   '(eldoc-box-body :background "black" :foreground "white"))
+
+(setq tab-bar-mode nil)
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
