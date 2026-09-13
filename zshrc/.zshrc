@@ -16,7 +16,7 @@ alias dup="~/.config/emacs/bin/./doom upgrade"
 alias dsync="~/.config/emacs/bin/./doom sync"
 alias ddoc="~/.config/emacs/bin/./doom doctor"
 alias ll="ls -lh"
-alias la="ls -lA"
+alias la="ls -lhA"
 alias c="clear"
 alias q="exit"
 
