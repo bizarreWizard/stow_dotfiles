@@ -10,9 +10,15 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
+                    -- lua
 					"lua_ls",
-					"clangd",
+                    "stylua",
+                    -- c/c++
+					"clangd", -- should be paired with clang-format
+                    -- python
+                    "basedpyright", -- should be paired with isort and mypy
 					"ruff",
+                    -- latex
 					"texlab",
 				},
 			})
