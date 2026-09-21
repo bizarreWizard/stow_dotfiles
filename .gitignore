@@ -5,6 +5,7 @@ nvim/.config/nvim/lazy-lock.json
 hypr/.config/hypr/specific.conf
 hypr/.config/hypr/specific.lua
 hypr/.config/hypr/hyprpaper.conf
+hypr/.config/hypr/hypridle.conf
 
 waybar/.config/waybar/specific.css
 waybar/.config/waybar/specific.jsonc
