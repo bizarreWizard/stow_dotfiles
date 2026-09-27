@@ -3,11 +3,13 @@
       "format": "<span color='#808080'><b> | </b></span>"
   },
   "custom/linuxlogo": {
-      "format": "<span color='#00ffff'> </span>"
+      "format": "<span color='#00ffff'>󰣇 </span>"
   },
   "include": ["./specific.jsonc"],
   "layer": "bottom",
+  /*
   "height": 25,
+  */
   "spacing": 0,
   "position": "bottom",
   "modules-left": ["hyprland/workspaces"],
