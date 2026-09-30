@@ -34,7 +34,8 @@ hl.permission({binary = "/usr/bin/grim", type = "screencopy", mode = "allow"})
 -- GENERAL CONFIG
 hl.config({
 	input = {
-		kb_layout = "us",
+		kb_layout = "us,it",
+        kb_options = "grp:win_space_toggle",
 		follow_mouse = 1,
 		sensitivity = 0,
 		touchpad = {
@@ -109,6 +110,7 @@ hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("emacsclient -c"))
 hl.bind(mainMod .. " + SHIFT + CTRL + E", hl.dsp.exec_cmd("emacs --init-directory .minimal-emacs.d"))
 hl.bind(mainMod .. " + SHIFT + Z", hl.dsp.exec_cmd("zathura"))
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("kitty --hold -e nvim"))
 
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
@@ -150,6 +152,9 @@ hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.swap({direction = "left"}))
 hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.swap({direction = "right"}))
 hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.swap({direction = "up"}))
 hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.swap({direction = "down"}))
+
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("systemctl suspend"))
+hl.bind(mainMod .. " + SHIFT + ESCAPE", hl.dsp.exec_cmd("systemctl poweroff"))
 
 -- Laptop Multimedia Keys
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
