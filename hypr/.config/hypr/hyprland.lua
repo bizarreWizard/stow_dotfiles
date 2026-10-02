@@ -35,7 +35,7 @@ hl.permission({binary = "/usr/bin/grim", type = "screencopy", mode = "allow"})
 hl.config({
 	input = {
 		kb_layout = "us,it",
-        kb_options = "grp:win_space_toggle",
+        kb_options = "ctrl:nocaps, grp:win_space_toggle",
 		follow_mouse = 1,
 		sensitivity = 0,
 		touchpad = {
