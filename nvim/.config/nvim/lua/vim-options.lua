@@ -29,7 +29,15 @@ vim.keymap.set("n", "<leader>a", ":Alpha<CR>")
 vim.keymap.set("n", "<leader>tl", ":colorscheme koda-light<CR>")
 vim.keymap.set("n", "<leader>td", ":colorscheme koda-dark<CR>")
 
+-- WINDOW BORDER STYLE
 vim.opt.winborder = "double"
+
+-- HIGHLIGHT YANKED TEXT
+vim.api.nvim_create_autocmd("TextYankPost", {
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+})
 
 -- LATEX BINDS
 --vim.keymap.set("n", "<C-l>l", "i\\begin{itemize}<CR>\\end{itemize}<ESC>O<TAB>\\item ") -- insert list (itemize)
